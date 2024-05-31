@@ -841,7 +841,7 @@ pub async fn main() {
             camera.set_viewport(frame_input.viewport);
 
             for event in frame_input.events.iter() {
-                // This will enable rerendering, and we can exit the loop after one event.
+                // Enable view projection update, and break after first event.
                 send_view_proj = true;
                 break;
             }
