@@ -841,31 +841,9 @@ pub async fn main() {
             camera.set_viewport(frame_input.viewport);
 
             for event in frame_input.events.iter() {
+                // This will enable rerendering, and we can exit the loop after one event.
                 send_view_proj = true;
-
-                /*
-                if let Event::MousePress {
-                    button,
-                    position,
-                    modifiers,
-                    ..
-                } = event
-                {
-                    if *button == MouseButton::Right && !modifiers.ctrl {
-                        log!("right mouse button pressed at {:?}", position);
-                    }
-                }
-                */
-
-                /*
-                if let Event::MouseMotion {
-                    delta,
-                    button,
-                    handled,
-                    ..
-                } = event {
-                }
-                */
+                break;
             }
 
             if !pointer_over_gui {
